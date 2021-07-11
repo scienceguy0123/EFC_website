@@ -1,3 +1,25 @@
-body{
-    background-color:salmon;
+@import "_navigation";
+// *{
+//     padding: 0;
+//     margin:0;
+// }
+body{  
+    
+    background-color: black;
+    // border:solid red;
+
 }
+.cover{
+    img{width:100%};
+    
+}
+
+.grid-container{
+    border:solid white;
+}
+
+
+.quote{
+    color:white;
+}
+
