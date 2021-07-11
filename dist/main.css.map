@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://EFC-website-2/./src/index.scss"],"names":[],"mappings":"AAAA,KACI,wB","file":"main.css","sourcesContent":["body{\n    background-color:salmon;\n}"],"sourceRoot":""}
