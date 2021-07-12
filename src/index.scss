@@ -7,86 +7,69 @@
 body{  
     
     background-color: black;
-    border:solid red;
+    //border:solid red;
 
 }
-// .cover{
-//     img{width:100%;
-//         height:100%};
-
-// }
 
 .grid-container{
-    height: 700px;
-    background-image: url("./image/set1.jpg") ;
-    background-size:cover;
-    background-repeat:no-repeat;
-     
-    
-    border:solid white;
+    //height:90 vh;
+    //width:100vw;
+    background-image: url("./image/set1.jpg");
+    background-size: 80%;
+    background-position: bottom 30%  right 10%;
+    background-repeat: no-repeat;
     display:grid;
-    grid-template-columns: 4fr 7fr;
-    grid-template-rows: 3fr 10fr;
+    grid-template-columns: 35vw 65vw;
+    grid-template-rows: 10vw 45vw;
     grid-template-areas: 
-        "nav nav"
-        "quote other";
-    gap:0;
-}
-
-
-.quote{
-    grid-area: quote;
-    border:solid yellow;
-    color:white;
-    font-size:40px;
+    "nav nav"
+    "quote empty";
     
-    text-align: center;
-    padding:2rem;
-    
-}
-.grid-object-3{
-    grid-area:other;
-    border:solid blue;
-}
+    img {
+        //controll the size of logo
+        width:7vw;
+    }
 
-.grid-container-2{
-    
-    height:400px;
-    display:grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows:1fr 3fr;
-    grid-template-areas: 
-    "pic title"
-    "pic content";
+    .grid-object-1{
+        //The navigation bar
+        grid-area: nav;
+        border:solid red;
+    }
 
-}
-
-.grid-object-4{
-    grid-area:pic;
-    border:solid green;
-
-    
-    img{
-        width: 100%;
-        height: 100%;
+    .flex-container{
+        //The naviagtion bar
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 3vw;
         
+        //border:solid white;
+        .nav-item{
+            list-style: none;
+            margin-right: 2.5vw;
+            margin-left:2.5vw;
+            font-size: 1.5vw;
+            a{
+                text-decoration: none;
+                color:whitesmoke;
+            }
+        }
+
+        .nav-item:first-child{
+            margin-right:auto;
+            margin-left: 10vw;
+        
+        }
     }
 
-}
-
-.grid-object-5{
-    grid-area:title;
-    border:solid purple;
-    p{
-        color:white;
+    .grid-object-2{
+        grid-area: quote;
+        border:solid blue;
     }
-}
 
-.grid-object-6{
-    grid-area:content;
-    border:solid orange;
-    p{
-        color:white;
+    .grid-object-3{
+        grid-area:empty;
+        border:solid yellow;
     }
 }
 
