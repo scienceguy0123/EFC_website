@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{  
-    
+    height:auto;
     background-color: black;
     border:solid red;
 
@@ -17,7 +17,8 @@ body{
 // }
 
 .grid-container{
-    height: 700px;
+    height: 60vw;
+    width: 100%;
     background-image: url("./image/set1.jpg") ;
     background-size:cover;
     background-repeat:no-repeat;
@@ -38,11 +39,14 @@ body{
     grid-area: quote;
     border:solid yellow;
     color:white;
-    font-size:40px;
+    
     
     text-align: center;
     padding:2rem;
     
+    .actual-quote{
+        font-size:3vw;
+    }    
 }
 .grid-object-3{
     grid-area:other;
