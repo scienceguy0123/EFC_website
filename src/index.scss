@@ -33,7 +33,7 @@ body{
     .grid-object-1{
         //The navigation bar
         grid-area: nav;
-        border:solid red;
+        //border:solid red;
     }
 
     .flex-container{
@@ -42,6 +42,7 @@ body{
         align-items: center;
         justify-content: flex-end;
         padding-right: 3vw;
+        padding-top:2vw;
         
         //border:solid white;
         .nav-item{
@@ -56,20 +57,57 @@ body{
         }
 
         .nav-item:first-child{
+            
             margin-right:auto;
-            margin-left: 10vw;
+            margin-left: 14vw;
         
         }
     }
 
     .grid-object-2{
+        //The quote part
         grid-area: quote;
-        border:solid blue;
+        //border:solid blue;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        padding-top:5vw;
+        padding-bottom: 3vw;
+
+        
+        
+        .quote-items{
+            color:white;    
+        }
+        .sign{
+            width: 5vw;
+            margin-bottom: 7vw;
+
+        }
+        .text{
+            //margin-top: 3vw;
+            text-align: center;
+            font-size: 3vw;
+            margin-bottom: 7vw;
+        }
+        .line{
+            height:1px;
+            width:5vw;
+            border-bottom:solid #ffcc33;
+            border-radius: 2px;
+            margin-bottom:2vw;
+
+        }
+        .name{
+            //margin-bottom: auto;
+            font-size:2vw;
+        }
     }
 
     .grid-object-3{
         grid-area:empty;
-        border:solid yellow;
+        //border:solid yellow;
     }
 }
 
