@@ -14,10 +14,12 @@ body{
 .grid-container{
     //height:90 vh;
     //width:100vw;
+    
     background-image: url("./image/set1.jpg");
     background-size: 80%;
     background-position: bottom 30%  right 10%;
     background-repeat: no-repeat;
+    box-shadow:  black;
     display:grid;
     grid-template-columns: 35vw 65vw;
     grid-template-rows: 10vw 45vw;
@@ -100,15 +102,79 @@ body{
 
         }
         .name{
-            //margin-bottom: auto;
+            
             font-size:2vw;
         }
     }
 
     .grid-object-3{
         grid-area:empty;
-        //border:solid yellow;
+        
     }
+}
+
+
+.grid-container-2{
+    background-color: rgb(0, 0, 0);
+    color:white;
+    display:grid;
+    grid-template-columns: 35vw 65vw;
+    grid-template-rows: 20vw 40vw;
+    grid-template-areas:
+    "pic title"
+    "pic content";
+
+    .grid-object-4{
+        grid-area: pic;
+        border:solid blue;
+        display:flex;
+
+    }
+
+    .grid-object-5{
+        grid-area:title;
+        //border:solid red;
+        padding-left: 4vw;
+        padding-top: 3vw;
+        .flex-container-2{
+        display:flex;
+        flex-direction: row;}
+
+        img{
+            width:10vw;
+        }
+
+        .line1{
+            font-size:1.5vw;
+        }
+
+        .line2{
+            font-size:6vw;
+            font-weight: bolder;
+            color:#ffcc33;
+        }
+
+        .line3{
+            font-size:6vw;
+            font-weight: bolder;
+            color:#ffcc33;
+        }
+
+    }
+
+    .grid-object-6{
+        grid-area:content;
+        //border:solid yellow;
+        padding-left: 4vw;
+        padding-right:4vw;
+        .content{
+            font-size: 2vw;
+            margin-bottom: 2vw;
+
+        }
+    }
+    
+
 }
 
 
