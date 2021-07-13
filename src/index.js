@@ -1,3 +1,5 @@
 import "./index.scss";
 
-console.log("hello")
+// $(window).load(function() {
+//     $("body").removeClass("preload");
+//   });
