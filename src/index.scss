@@ -1,4 +1,4 @@
-@import "_navigation";
+
 *{
     padding: 0;
     margin:0;
@@ -7,7 +7,7 @@
 body{  
     
     background-color: black;
-    //border:solid red;
+    
 
 }
 
@@ -15,7 +15,7 @@ body{
     //height:90 vh;
     //width:100vw;
     
-    background-image: url("./image/set1.jpg");
+    background-image: url("./image/index/set1.jpg");
     background-size: 80%;
     background-position: bottom 30%  right 10%;
     background-repeat: no-repeat;
@@ -46,6 +46,7 @@ body{
         padding-right: 3vw;
         padding-top:2vw;
         
+        
         //border:solid white;
         .nav-item{
             list-style: none;
@@ -62,6 +63,7 @@ body{
             
             margin-right:auto;
             margin-left: 14vw;
+            //padding-left:11vw;
         
         }
     }
@@ -116,6 +118,7 @@ body{
 
 .grid-container-2{
     background-color: rgb(0, 0, 0);
+    //border:solid green;
     color:white;
     display:grid;
     grid-template-columns: 35vw 65vw;
@@ -123,26 +126,38 @@ body{
     grid-template-areas:
     "pic title"
     "pic content";
+    position:relative;
+
+    &::before{
+    content:'';
+    position:absolute;
+    background-image: url("image/index/camera.jpg");
+    top:0vw;
+    right:0vw;
+    left:20vw;
+    bottom:0vw;
+    background-size:90vw;
+    background-repeat: no-repeat;
+    opacity:0.4;
+    }
+ 
+
 
     .grid-object-4{
+        position:relative;
         grid-area: pic;
-        border:solid blue;
+        //border:solid blue;
         display:flex;
 
     }
 
     .grid-object-5{
+        position:relative;
         grid-area:title;
         //border:solid red;
         padding-left: 4vw;
         padding-top: 3vw;
-        .flex-container-2{
-        display:flex;
-        flex-direction: row;}
 
-        img{
-            width:10vw;
-        }
 
         .line1{
             font-size:1.5vw;
@@ -163,18 +178,23 @@ body{
     }
 
     .grid-object-6{
+        position:relative;
         grid-area:content;
         //border:solid yellow;
         padding-left: 4vw;
         padding-right:4vw;
+        
+
+        }
         .content{
             font-size: 2vw;
             margin-bottom: 2vw;
 
         }
-    }
-    
 
+
+
+        
+   
 }
-
 
