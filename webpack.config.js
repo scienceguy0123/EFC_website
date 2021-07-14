@@ -1,6 +1,7 @@
 module.exports = {
     entry: {
-        index: './src/index.js'
+        index: './src/index/index.js',
+        portfolio:'./src/portfolio/portfolio.js'
 
     },
     output: {

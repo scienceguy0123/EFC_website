@@ -1,4 +1,5 @@
 
+
 *{
     padding: 0;
     margin:0;
@@ -6,13 +7,14 @@
 }
 
 
-body{  
+body{
+    overflow-x: hidden;
     background-color: black;
 }
 
 
 .grid-container{ 
-    background-image: url("./image/index/set1.jpg");
+    background-image: url("../image/index/set1.jpg");
     background-size: 80%;
     background-position: bottom 30%  right 10%;
     background-repeat: no-repeat;
@@ -62,11 +64,8 @@ body{
             //border: solid red;
             a{
                 text-decoration: none;
-                color:white;
-                
-            }
-
-            
+                color:white;   
+            } 
         }
         .nav-item:first-child{
             
@@ -94,7 +93,7 @@ body{
         }
 
         .text:hover::after{
-            //transition:transform 300ms ease-in-out;
+
             width:100%;
             transition:width 0.5s;
             
@@ -167,11 +166,12 @@ body{
     "pic title"
     "pic content";
     position:relative;
+    
 
     &::before{
     content:'';
     position:absolute;
-    background-image: url("image/index/camera.jpg");
+    background-image: url("../image/index/camera.jpg");
     top:0vw;
     right:0vw;
     left:20vw;
@@ -186,8 +186,14 @@ body{
     .grid-object-4{
         position:relative;
         grid-area: pic;
-        //border:solid blue;
-        display:flex;
+        border:solid #ffcc33;
+        border-radius: 10px 70px 10px 10px;
+        margin-left:5vw;
+        margin-top:5vw;
+        margin-bottom: 5vw;
+        //background-image: url("image/index/group.jpg");
+        background-size:contain;
+        background-repeat: no-repeat;
 
     }
 
@@ -197,6 +203,8 @@ body{
         //border:solid red;
         padding-left: 4vw;
         padding-top: 3vw;
+        
+        
 
 
         .line1{
