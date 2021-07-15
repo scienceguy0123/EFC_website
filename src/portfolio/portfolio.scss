@@ -6,10 +6,12 @@
 body{
     background-color:black;
 }
+
 #flex-container{
     //controll the nav bar
+    grid-area:nav;
     position:fixed;
-    width:100%;
+    width:100vw;
     img{width:4vw;}
     //border:solid red;
     display:flex;
@@ -25,6 +27,8 @@ body{
         //controll each element in the nav bar
         list-style:none;
         margin-right:8vw;
+        font-size: 1.5vw;
+        
 
         a{
             //controll the element in the nav abr
@@ -123,12 +127,123 @@ body{
         // background-image: url("../image/portfolio/set2.jpg");
         // background-size: cover;
         // background-repeat: no-repeat;
-        background-color: lightgrey;
+        background-color: black;
     }
 
     .grid-object-3{
         grid-area: mov;
-        border:solid red;
+        //border:solid red;
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .thumbnail{
+           background-size:contain;
+           background-repeat: no-repeat;
+           margin: 2vw;
+           cursor:pointer;
+        }
     }
 
+}
+
+.modal{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid #ffcc33;
+    border-radius:10px;
+    z-index:10;
+    height:50vw;
+    width:80vw;
+    background-color:rgb(0, 0, 0, 0.9);
+    border:solid whtie;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:2fr 2fr 4fr 2fr;
+    grid-template-areas: 
+    "pic title"
+    "pic genre"
+    "pic description"
+    "pic link";
+    letter-spacing: 2px;
+    padding-right: 2vw;
+    
+
+    .fixed{
+        color:#ffcc33;
+        font-weight: lighter;
+    }
+
+    .slides{
+        grid-area:pic;
+        //border:solid red;
+    }
+
+    .title{
+        grid-area:title;
+        //border:solid blue;
+        .close-button{
+            //display:flex;
+            margin-left: 97%;
+            margin-top:5px;
+            cursor:pointer;
+            border:none;
+            outline:none;
+            background:none;
+            color: #ffcc33;
+            font-size:2vw;
+        }
+        .title-content{
+            color:white;
+            font-weight: bolder;
+            font-size:3vw;
+            
+        }
+    }
+
+    .genre{
+        grid-area: genre;
+        padding-top: 2vw;
+        //border:solid yellow;
+        .genre-content{
+            color:white;
+            font-size:2vw;
+        }
+    }
+
+    .description{
+        grid-area: description;
+        
+        //border:solid black;
+        .description-content{
+            color:white;
+            font-size:2vw;
+        }
+    }
+
+    .link{
+        grid-area:link;
+        //border:solid green;
+    }
+}
+
+.modal-active{
+    transform:translate(-50%, -50%) scale(1);
+}
+
+.overlay{
+    position:fixed;
+    opacity:0;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.7);
+    pointer-events:none;
+}
+
+.overlay-active{
+    opacity:1;
+    pointer-events:all;
 }
