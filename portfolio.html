@@ -63,9 +63,21 @@
         </div>
 
         <div class="grid-object-2 filter">
-
+            <input type="text" id="myInput" onkeyup="textSearch()" placeholder="Search for title...">
+            <p class="fixed">Genre :</p>
+            <div class="dropDown">
+                <button onclick="" class="dropbtn">...</button>
+                <div class="list">   
+                    <p class="button">All</p>
+                    <p class="button">Thriller</p>
+                    <p class="button">Romance</p>
+                    <p class="button">Documentary</p>
+                </div>
+            </div>
+        </div>    
+        
             
-        </div>
+        
 
         <div class="grid-object-3 films">
 
@@ -75,9 +87,14 @@
     </div>
 
     <div class='modal' id = 'modal'>
-        <div class="slides"></div>
+        <button class='close-button'>X</button>
+        <div class="slideshow">
+            <a class="prev" >&#10094;</a>
+            <a class="next" >&#10095;</a>
+            <div class="images"></div>
+        </div>
         <div class="title">
-            <button class='close-button'>X</button>
+            <!-- <button class='close-button'>X</button> -->
             <p class="fixed">Title: </p>
             <p class="title-content"></p>
         </div>
@@ -93,6 +110,13 @@
         </div>
 
         <div class="link">
+            <a href="index.html">
+                <img class="youtube" src="src/image/portfolio/youtube_logo.png" alt="logo">
+            </a>
+
+            <a href="index.html">
+                <img class="bilibili" src="src/image/portfolio/bilibili_logo.png" alt="logo">
+            </a>
 
         </div>
     </div>

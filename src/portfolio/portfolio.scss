@@ -20,7 +20,7 @@ body{
     padding-right: 5vw;
     padding-top:0;
     //border-radius:0px 0px 10px 10px;
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgb(0, 0, 0, 0.9);
     
 
     .nav-item{
@@ -123,25 +123,100 @@ body{
 
     .grid-object-2{
         grid-area: filter;
-        // //border:solid green;
+        border:solid green;
         // background-image: url("../image/portfolio/set2.jpg");
         // background-size: cover;
         // background-repeat: no-repeat;
         background-color: black;
+        display:flex;
+        align-items: center;
+        
+        #myInput{
+            width:30vw;
+            height:3vw;
+            margin-left:5vw;
+            font-size:2vw;
+            border:2px solid #ffcc33;
+            border-radius: 5px;
+        }
+        .fixed{
+            color:#ffcc33;
+            font-size: 2vw;
+            margin-left:3vw;
+        }
+        .dropDown{
+            color:white;
+            position:relative;
+            display:inline-block;
+        }
+        // .list{
+        //     display: none;
+        //     position: absolute;
+        //     background-color: #f6f6f6;
+        //     border: 1px solid #ddd;
+        //     z-index: 1;
+        // }
+
     }
 
     .grid-object-3{
         grid-area: mov;
         //border:solid red;
+        
         display:grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 20vw;
 
         .thumbnail{
-           background-size:contain;
+           position:relative; 
+           background-size:cover;
            background-repeat: no-repeat;
            margin: 2vw;
            cursor:pointer;
+           transition: transform 0.2s;
+           //border:solid red;
         }
+
+
+        .thumbnail::after{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:-1;
+            background-color: rgba(0,0,0,0.7);
+            border:solid #ffcc33;
+            transition: transform 0.2s;
+        }
+
+
+        //only need one hover block after all
+        .thumbnail:hover{
+            transform: scale(1.05);
+
+        }
+
+        .hover-title{
+            height:100%;
+            width:100%;
+            opacity:0;
+            color:white;
+            font-weight:bolder;
+            font-size:3vw;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            transition:0.2s;
+
+        }
+
+        .hover-title:hover{
+            opacity:1;
+        }
+
+      
     }
 
 }
@@ -160,8 +235,9 @@ body{
     border:solid whtie;
     display:grid;
     grid-template-columns:1fr 1fr;
-    grid-template-rows:2fr 2fr 4fr 2fr;
+    grid-template-rows:2fr 2fr 2fr 4fr 3fr;
     grid-template-areas: 
+    "pic blank"
     "pic title"
     "pic genre"
     "pic description"
@@ -169,31 +245,62 @@ body{
     letter-spacing: 2px;
     padding-right: 2vw;
     
-
+    .close-button{
+        grid-area:blank;
+        padding-left: 35vw;
+        margin-bottom:2vw;
+        cursor:pointer;
+        border:none;
+        outline:none;
+        background:none;
+        color: #ffcc33;
+        font-size:2vw;
+        //border:solid purple;
+    }
     .fixed{
         color:#ffcc33;
         font-weight: lighter;
     }
 
-    .slides{
+    .slideshow{
         grid-area:pic;
         //border:solid red;
+        position:relative;
+        display:flex;
+        justify-content: center;
+        align-self: center;
+        
+        margin-left:2vw;
+        margin-right:2vw;
+        margin-bottom: 7vw;
+
+        .prev{
+            left:0;
+        }
+        .next{
+            right: 0;
+        }
+
+        .prev, .next{
+            color: #ffcc33;
+            cursor: pointer;
+            position: absolute;
+            font-size: 3vw;
+            top: 40%;
+            transition:0.2s;
+            background-color: rgba(0,0,0,0.2);
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+          }
+          
     }
 
     .title{
         grid-area:title;
         //border:solid blue;
-        .close-button{
-            //display:flex;
-            margin-left: 97%;
-            margin-top:5px;
-            cursor:pointer;
-            border:none;
-            outline:none;
-            background:none;
-            color: #ffcc33;
-            font-size:2vw;
-        }
+
         .title-content{
             color:white;
             font-weight: bolder;
@@ -204,7 +311,7 @@ body{
 
     .genre{
         grid-area: genre;
-        padding-top: 2vw;
+        //padding-top: 2vw;
         //border:solid yellow;
         .genre-content{
             color:white;
@@ -215,7 +322,7 @@ body{
     .description{
         grid-area: description;
         
-        //border:solid black;
+        //border:solid white;
         .description-content{
             color:white;
             font-size:2vw;
@@ -225,6 +332,21 @@ body{
     .link{
         grid-area:link;
         //border:solid green;
+        display:flex;
+        justify-content: space-around;
+        
+
+        img{
+            width:5vw;
+        }
+
+        .youtube{
+            margin-left:2vw;
+        }
+
+        .bilibili{
+            margin-right:2vw;
+        }
     }
 }
 
