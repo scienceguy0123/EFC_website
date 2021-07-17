@@ -6,7 +6,7 @@ let movies = {
     
     divergence:{
         id: 'divergence',
-        name: 'Divergence',
+        name: 'DIVERGENCE',
         genre: ['Thriller'],
         images: ['src/image/portfolio/divergence/p1.jpg',
                 'src/image/portfolio/divergence/p2.jpg',
@@ -22,7 +22,7 @@ let movies = {
     
     feather:{
         id: 'feather',
-        name: 'Feather',
+        name: 'FEATHER',
         genre: ['Thriller'],
         images:['src/image/portfolio/feather/p1.jpg',
                 'src/image/portfolio/feather/p2.jpg',
@@ -36,7 +36,7 @@ let movies = {
 
     chooseWisely:{
         id: 'chooseWisely',
-        name: 'Choose Wisely',
+        name: 'CHOOSE WISELY',
         genre: ['Romance'],
         images:['src/image/portfolio/choose-wisely/p1.jpg',
                 'src/image/portfolio/choose-wisely/p2.jpg',
@@ -190,26 +190,77 @@ nextButt.addEventListener('click', () =>{
 
 
 
-//functions to control the dropdown filter
+//functions to control the search bar and dropdown filter
 
-function showDropdown() {
-    let i;
-    let dropDownList = document.querySelector(".dropDownList");
-    let dropDownButtons = dropDownList.getElementsByClassName("button");
-    for (i=0; i<dropDownButtons.length;i++){
-        dropDownButtons[i].classList.toggle("button-show")
-    };
-}
+let dropDownList = document.querySelector(".dropDownList");
+let dropDownButtons = dropDownList.getElementsByClassName("button");
 
+
+//drop down the bar when clicked on the bar
 let dropbtn = document.querySelector('.dropbtn');
 dropbtn.addEventListener("click", () => {
     showDropdown();
+})
+
+//giving every button in the drop down eventlistener
+//and filter out the mismatched films based on the 
+//genre that is clicked
+for (let i=0; i<dropDownButtons.length;i++){
+    dropDownButtons[i].addEventListener("click", (info)=>{
+        //console.log(info);
+        console.log(info.target.innerText);
+        filter(info.target.innerText);
+    })
+};
+
+
+//helper function to drop down when clicked on the bar
+function showDropdown() {
+    let i;
+    for (i=0; i<dropDownButtons.length;i++){
+        dropDownButtons[i].classList.toggle("button-show");
+    }
+
 }
 
 
+//helper function to filter  out the mismatched films
+function filter(tag){
+    thumbnails.forEach((thumbnail) =>{
+        let film_id = thumbnail.id;
+        
+        //console.log(film_id);
+
+        //reset the display of thumbnail before clicking again,
+        // prevent display property accumulated
+        thumbnail.style.display = ''; 
+        if (tag == "All"){
+            thumbnail.style.display = '';
+        }else if (movies[film_id]['genre'].includes(tag) == false){
+            thumbnail.style.display = 'none';
+        }
+    })
+}
+
+let searchBar = document.querySelector('#myInput')
+
+searchBar.addEventListener("keyup", ()=>{
+    let input = searchBar.value.toUpperCase();
+    console.log(input);
+    textSearch(input);
+ })
 
 
+function textSearch(input){
+    thumbnails.forEach((thumbnail) =>{
+        let film_id = thumbnail.id;
+        thumbnail.style.display = '';
+        if (input == ''){
+            thumbnail.style.display = '';
+        }
+        else if(movies[film_id]['name'] != input){
+            thumbnail.style.display = 'none';
+        }
+    })
+}
 
-
-
-)

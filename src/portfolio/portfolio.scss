@@ -123,7 +123,7 @@ body{
 
     .grid-object-2{
         grid-area: filter;
-        border:solid green;
+        //border:solid green;
 
         background-color: black;
         display:flex;
@@ -132,7 +132,7 @@ body{
         #myInput{
             width:30vw;
             height:3vw;
-            margin-left:5vw;
+            margin-left:2vw;
             font-size:2vw;
             border:2px solid #ffcc33;
             border-radius: 5px;
@@ -150,7 +150,7 @@ body{
 
             .dropbtn{
                 margin-left:2vw;
-                width:10vw;
+                width:12vw;
                 height:3vw;
                 border:2px solid #ffcc33;
                 border-radius: 5px;
@@ -161,7 +161,8 @@ body{
                 position:absolute;
                 z-index:10;
                 margin-left:2vw;
-                width:10vw;
+                
+                
             }
         }
         .button{
@@ -172,11 +173,18 @@ body{
             color:black;
             font-size: 2vw;
             cursor:pointer;
+            height:3.5vw;
+            width:12vw;
             
-            
+            text-align:center;
+            padding-top: 0.5vw;
+       
         }
         .button-show{
             display:block;
+        }
+        .button:hover{
+            background-color: #ddd;
         }
 
     }
