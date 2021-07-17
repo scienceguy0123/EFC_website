@@ -133,9 +133,11 @@ closeButton.addEventListener('click', ()=>{
 })
 
 
-//allow clicking outside the modal to close the modal
+//allow clicking outside the modal to close the modal or dropdown filter
 overlay.addEventListener('click', ()=>{
     closeModal();
+    closeDropdown();
+
 })
 
 
@@ -158,7 +160,7 @@ function showSlides(n){
     //slidesshow is defined at the top before openmodal function
     //get varaible length because it returns a list and can get the number of images
     let slides = slideshow.getElementsByClassName("image");
-    //console.log(slides);
+    
     //if already run through all the picture return to the 1st picture
     if (n>slides.length) {slideIndex = 1};
     //if it is at the 1st picture and run back, then goes to the last pic
@@ -195,12 +197,16 @@ nextButt.addEventListener('click', () =>{
 let dropDownList = document.querySelector(".dropDownList");
 let dropDownButtons = dropDownList.getElementsByClassName("button");
 
+//for closing the dropdown by clicking any where on the page except dropdown
+let others = document.querySelector("body");
 
 //drop down the bar when clicked on the bar
 let dropbtn = document.querySelector('.dropbtn');
 dropbtn.addEventListener("click", () => {
     showDropdown();
+    overlay.classList.toggle('overlay-active');
 })
+
 
 //giving every button in the drop down eventlistener
 //and filter out the mismatched films based on the 
@@ -214,13 +220,25 @@ for (let i=0; i<dropDownButtons.length;i++){
 };
 
 
+
+
 //helper function to drop down when clicked on the bar
 function showDropdown() {
     let i;
     for (i=0; i<dropDownButtons.length;i++){
         dropDownButtons[i].classList.toggle("button-show");
-    }
+    }   
+}
 
+
+
+//helper function to close dropdown, mainly for when clicking other places on the page
+//used in overlay eventlistener
+function closeDropdown(){
+    let i;
+    for (i=0; i<dropDownButtons.length;i++){
+        dropDownButtons[i].classList.remove("button-show");
+    }
 }
 
 
@@ -228,8 +246,6 @@ function showDropdown() {
 function filter(tag){
     thumbnails.forEach((thumbnail) =>{
         let film_id = thumbnail.id;
-        
-        //console.log(film_id);
 
         //reset the display of thumbnail before clicking again,
         // prevent display property accumulated
@@ -242,15 +258,17 @@ function filter(tag){
     })
 }
 
+
 let searchBar = document.querySelector('#myInput')
 
+//monitoring users input in the search bar
 searchBar.addEventListener("keyup", ()=>{
     let input = searchBar.value.toUpperCase();
-    console.log(input);
+    //console.log(input);
     textSearch(input);
  })
 
-
+//helper method to find the film with correct title
 function textSearch(input){
     thumbnails.forEach((thumbnail) =>{
         let film_id = thumbnail.id;
