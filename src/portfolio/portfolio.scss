@@ -124,9 +124,7 @@ body{
     .grid-object-2{
         grid-area: filter;
         border:solid green;
-        // background-image: url("../image/portfolio/set2.jpg");
-        // background-size: cover;
-        // background-repeat: no-repeat;
+
         background-color: black;
         display:flex;
         align-items: center;
@@ -140,6 +138,7 @@ body{
             border-radius: 5px;
         }
         .fixed{
+            
             color:#ffcc33;
             font-size: 2vw;
             margin-left:3vw;
@@ -148,14 +147,37 @@ body{
             color:white;
             position:relative;
             display:inline-block;
+
+            .dropbtn{
+                margin-left:2vw;
+                width:10vw;
+                height:3vw;
+                border:2px solid #ffcc33;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .dropDownList{
+                position:absolute;
+                z-index:10;
+                margin-left:2vw;
+                width:10vw;
+            }
         }
-        // .list{
-        //     display: none;
-        //     position: absolute;
-        //     background-color: #f6f6f6;
-        //     border: 1px solid #ddd;
-        //     z-index: 1;
-        // }
+        .button{
+            display: none;
+            background-color: #f6f6f6;
+            border: 1px solid #ddd;
+            z-index: 1;
+            color:black;
+            font-size: 2vw;
+            cursor:pointer;
+            
+            
+        }
+        .button-show{
+            display:block;
+        }
 
     }
 

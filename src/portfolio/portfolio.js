@@ -189,3 +189,27 @@ nextButt.addEventListener('click', () =>{
 })
 
 
+
+//functions to control the dropdown filter
+
+function showDropdown() {
+    let i;
+    let dropDownList = document.querySelector(".dropDownList");
+    let dropDownButtons = dropDownList.getElementsByClassName("button");
+    for (i=0; i<dropDownButtons.length;i++){
+        dropDownButtons[i].classList.toggle("button-show")
+    };
+}
+
+let dropbtn = document.querySelector('.dropbtn');
+dropbtn.addEventListener("click", () => {
+    showDropdown();
+}
+
+
+
+
+
+
+
+)
