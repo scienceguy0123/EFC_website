@@ -196,7 +196,7 @@ body{
         
         display:grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 20vw;
+        grid-auto-rows: 20vw;
 
         .thumbnail{
            position:relative; 
@@ -219,7 +219,7 @@ body{
             z-index:-1;
             background-color: rgba(0,0,0,0.7);
             border:solid #ffcc33;
-            transition: transform 0.2s;
+            
         }
 
 

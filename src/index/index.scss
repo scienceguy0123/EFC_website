@@ -190,11 +190,12 @@ body{
         border:solid #ffcc33;
         border-radius: 10px 70px 10px 10px;
         margin-left:5vw;
-        margin-top:5vw;
-        margin-bottom: 5vw;
-        //background-image: url("image/index/group.jpg");
-        background-size:contain;
+        margin-top:10vw;
+        margin-bottom: 10vw;
+        background-image: url("../image/index/turtle.jpg");
+        background-size:cover;
         background-repeat: no-repeat;
+        background-position:center;
 
     }
 
