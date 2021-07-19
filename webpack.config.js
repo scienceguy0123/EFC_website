@@ -1,8 +1,10 @@
 module.exports = {
     entry: {
         index: './src/index/index.js',
-        portfolio:'./src/portfolio/portfolio.js'
-
+        portfolio:'./src/portfolio/portfolio.js',
+        activity:'./src/activity/activity.js',
+        crew:'./src/crew/crew.js',
+        contact:'./src/contact/contact.js'
     },
     output: {
         

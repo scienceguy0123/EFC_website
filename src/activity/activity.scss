@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color:black;
+}
+
+#flex-container{
+    //controll the nav bar
+    grid-area:nav;
+    position:fixed;
+    width:100vw;
+    img{width:4vw;}
+    //border:solid red;
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+    padding-right: 5vw;
+    padding-top:0;
+    //border-radius:0px 0px 10px 10px;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index:100;
+    
+    .nav-item{
+        //controll each element in the nav bar
+        list-style:none;
+        margin-right:8vw;
+        font-size: 1.5vw;
+        a{
+            //controll the element in the nav abr
+            text-decoration: none;
+            color:white;
+        }
+    }
+    .nav-item:first-child{
+        //only controll the logo 
+        margin-right:auto;
+        margin-left:10vw;
+        padding-top:0.5vw;
+    }
+    .text:hover{
+        color:#ffcc33;
+    }
+    .text::after{
+        content: '';
+        display:block;
+        margin-top:2px;
+        width:2px;
+        height:2px;
+        background: #ffcc33;
+        transition:width 0.5s;     
+    }
+    .text:hover::after{
+        width:100%;
+        transition:width 0.5s;   
+    }
+}
+
+.grid-container{
+    display:grid;
+    grid-template-rows:40vw 8vw minmax(40vw,auto);
+    grid-template-areas:
+    "banner"
+    "subtitle"
+    "content";
+
+    .grid-object-1{
+        grid-area: banner;
+        //border:solid white;
+        background-image: url("../image/activity/cinema.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        display:flex;
+
+        .para1{
+            color:white;
+            //padding-top: ;
+            padding-left:5vw;
+            
+            .line1{
+                font-size: 2vw;
+                margin-top:17vw;
+            }
+            .line2{
+                font-size: 5vw;
+                font-weight: bolder;
+                padding-top:1vw;
+                color:#ffcc33;
+            }
+        }
+
+        .border{
+            width:2vw;
+            height:14vw;
+            margin-top:15vw;
+            margin-left: 4vw;
+            border-left:solid #ffcc33;
+            border-radius: repeat(5px,4);
+        }
+
+        .para2{
+            color:white;
+            font-size:2vw;
+            margin-top:14vw;
+            margin-left:2vw;
+            margin-right:2vw;
+            text-align: left;
+            
+        }
+    }
+
+    .grid-object-2{
+        grid-area:subtitle;
+        //border:solid red;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            color:#ffcc33;
+            font-weight: bolder;
+            font-size: 3vw;
+        }
+    }
+
+    .grid-object-3{
+        grid-area:content;
+        //border: solid blue;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:minmax(40vw, auto);
+
+        .content{
+            margin:3vw;
+        }
+        .screening{
+            //border:solid purple;
+            border-radius: 10px;
+            
+            background-color:rgb(36, 36, 36);
+            transition:0.2s;
+            display:flex;
+            flex-direction: column;
+            img{
+                width:5vw;
+                margin-top:3vw;
+                margin-left:2vw;
+            }
+            .title{
+                margin-top:3vw;
+                margin-left:2vw;
+                font-weight:bolder;
+                letter-spacing: 0.1vw;
+                color:#D93D59;
+                font-size:3vw;
+            }
+            .border{
+                
+                width:5vw;
+                border-top:2px solid #D93D59;
+                margin-top:1vw;
+                margin-left:2vw;
+            }
+            .detail{
+                color:#D93D59;
+                margin-left:2vw;
+                margin-right:2vw;
+                margin-top:2.5vw;
+                padding-bottom:2vw;
+                font-size: 2vw;
+
+            }
+        }
+
+        .screening:hover{
+            background-color:#D93D59;
+            transform: scale(1.05);
+            
+            .title{
+                color:white;
+            }
+            .border{
+                border-top:2px solid white;
+            }
+            .detail{
+                color:white;
+            }
+        }
+    }
+}

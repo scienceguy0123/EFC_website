@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFC-Contact</title>
+</head>
+<body>
+
+    <ul class="nav" id="flex-container">
+        <li class="nav-item">
+            <a href="index.html">
+                <img src="src/image/index/EFC-logo.png" alt="logo">
+            </a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link text" href="index.html">HOME</a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link text" href="portfolio.html">PORTFOLIO</a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link text" href="activity.html">ACTIVITY</a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link text" href="crew.html">CREW</a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link text" href="contact.html">CONTACT</a>
+        </li>
+    </ul>
+    
+    <div class="grid-container">
+        <div class="grid-object-1 banner">
+            <div class="para1">
+                <p class="line1">Feel free to </p>
+                <p class="line2">CONTACT US</p>
+            </div>
+
+            <div class="border"></div>
+            <div class="para2">
+                Are you interested to become part of the big 
+                family? Feel free to shoot us an email if you 
+                have any question !
+            </div>
+
+        </div>
+
+        <div class="grid-object-2 form">
+            <form action="https://formspree.io/f/xqkwdyrw" method="POST">
+                <label class="name">
+                    Your Name :<br>
+                    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                </label>
+                
+                <label class="email">
+                    Your Email : <br>
+                    <input type="email" name="_replyto" class="emailInput" placeholder="...@email.com" required="">
+                </label>
+
+                <label class="message">
+                    Your Message :<br>
+                    <textarea name="message" placeholder="Ask anything..."></textarea>
+                </label>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+    <script src="./dist/contact.bundle.js"></script>
+</body>
+</html>

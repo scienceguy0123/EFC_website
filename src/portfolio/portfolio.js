@@ -135,9 +135,9 @@ closeButton.addEventListener('click', ()=>{
 
 //allow clicking outside the modal to close the modal or dropdown filter
 overlay.addEventListener('click', ()=>{
+    
     closeModal();
     closeDropdown();
-
 })
 
 
@@ -197,8 +197,6 @@ nextButt.addEventListener('click', () =>{
 let dropDownList = document.querySelector(".dropDownList");
 let dropDownButtons = dropDownList.getElementsByClassName("button");
 
-//for closing the dropdown by clicking any where on the page except dropdown
-let others = document.querySelector("body");
 
 //drop down the bar when clicked on the bar
 let dropbtn = document.querySelector('.dropbtn');
@@ -215,6 +213,8 @@ for (let i=0; i<dropDownButtons.length;i++){
     dropDownButtons[i].addEventListener("click", (info)=>{
         //console.log(info);
         console.log(info.target.innerText);
+        closeDropdown();
+        overlay.classList.remove('overlay-active');
         filter(info.target.innerText);
     })
 };
