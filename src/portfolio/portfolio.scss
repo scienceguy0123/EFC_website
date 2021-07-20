@@ -262,6 +262,8 @@ body{
     z-index:10;
     height:50vw;
     width:80vw;
+    max-height:500px;
+
     background-color:rgb(0, 0, 0, 0.9);
     border:solid whtie;
     display:grid;
@@ -299,11 +301,10 @@ body{
         position:relative;
         display:flex;
         justify-content: center;
-        align-self: center;
-        
+        align-items: center;
         margin-left:2vw;
         margin-right:2vw;
-        margin-bottom: 7vw;
+        // margin-bottom: 7vw;
 
         .prev{
             left:0;
